@@ -5,7 +5,6 @@ def writeNotes(content):
     with open(path, 'a', encoding='utf-8') as FILE:
         FILE.write(content)
 
-
 # read content of the save file and return it in a list
 def readNotes():
     returnList = []
@@ -22,8 +21,7 @@ def readNotes():
 
         # if the file is empty return None
         if not returnList:
-            return
-        
+            return None
     return returnList
 
 # completely empty the save file
@@ -43,5 +41,4 @@ def parseLength():
                 count
             else:
                 count+=1
-
     return count
