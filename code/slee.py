@@ -1,9 +1,16 @@
 path = './data/notes.txt'
+idPath = './data/id.txt'
 
 # write the content of the task to the save file
 def writeNotes(content):
+    lineId = parseLength() + 1
     with open(path, 'a', encoding='utf-8') as FILE:
-        FILE.write(content)
+        FILE.write(f"{lineId}: {content}")
+
+    with open(idPath, 'a', encoding='utf-8') as IDFILE:
+        IDFILE.write(lineId)
+        
+
 
 # read content of the save file and return it in a list
 def readNotes():
@@ -24,10 +31,17 @@ def readNotes():
             return None
     return returnList
 
+
+
 # completely empty the save file
 def clearNotes():
     with open(path, 'w', encoding='utf-8') as FILE:
         FILE.truncate(0)
+
+    with open(idPath, 'w', encoding='utf-8') as IDFILE:
+        IDFILE.truncate(0)
+
+
 
 # return the length of a given file.    
 def parseLength():
