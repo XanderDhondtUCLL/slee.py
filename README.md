@@ -1,2 +1,2 @@
 # slee.py
-I am so eepy
+notes app made in python with a simple GUI.
