@@ -5,11 +5,11 @@ idPath = './data/id.txt'
 def writeNotes(content):
     lineId = parseLength() + 1
     with open(path, 'a', encoding='utf-8') as FILE:
-        FILE.write(f"{lineId}: {content}")
+        FILE.write(f"{lineId}. {content}\n")
 
     with open(idPath, 'a', encoding='utf-8') as IDFILE:
-        IDFILE.write(lineId)
-        
+        IDFILE.write(f'{str(lineId)}\n')
+
 
 
 # read content of the save file and return it in a list
@@ -26,10 +26,14 @@ def readNotes():
             else:
                 returnList += [line]
 
-        # if the file is empty return None
-        if not returnList:
-            return None
     return returnList
+
+
+
+# remove a specific task if completed
+def removeNote(id):
+    parseLength('')
+
 
 
 
