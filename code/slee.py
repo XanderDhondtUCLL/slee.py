@@ -1,5 +1,5 @@
-path = './data/notes.txt'
-idPath = './data/id.txt'
+path = r'..\data\notes.txt'
+idPath = r'..\data\id.txt'
 
 # write the content of the task to the save file
 def writeNotes(content):
@@ -15,7 +15,7 @@ def writeNotes(content):
 # read content of the save file and return it in a list
 def readNotes():
     returnList = []
-    with open('./data/notes.txt', 'r', encoding='utf-8') as FILE:
+    with open(path, 'r', encoding='utf-8') as FILE:
         for line in FILE:
             line = line.rstrip()
 
@@ -50,7 +50,7 @@ def clearNotes():
 # return the length of a given file.    
 def parseLength():
     count = 0
-    with open('./data/notes.txt', 'r', encoding='utf-8') as FILE:
+    with open(path, 'r', encoding='utf-8') as FILE:
         for line in FILE:
             line = line.rstrip()
 
