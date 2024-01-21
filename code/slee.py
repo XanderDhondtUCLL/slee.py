@@ -1,14 +1,10 @@
 path = r'..\data\notes.txt'
-idPath = r'..\data\id.txt'
 
 # write the content of the task to the save file
 def writeNotes(content):
     lineId = parseLength() + 1
     with open(path, 'a', encoding='utf-8') as FILE:
         FILE.write(f"{lineId}. {content}\n")
-
-    with open(idPath, 'a', encoding='utf-8') as IDFILE:
-        IDFILE.write(f'{str(lineId)}\n')
 
 
 
@@ -31,10 +27,16 @@ def readNotes():
 
 # remove a specific task if completed
 def removeNote(id):
-    parseLength('')
+    with open(path, 'r', encoding='utf-8') as FILE:
+        lines = FILE.readlines()
 
-
-
+    # delete matching content
+    content = id
+    with open(path, 'w', encoding='utf-8') as FILE:
+        for line in lines:
+            # readlines() includes a newline character
+            if line.strip("\n") != content:
+                FILE.write(line)
 
 # completely empty the save file
 def clearNotes():
