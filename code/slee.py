@@ -25,7 +25,6 @@ def readNotes():
             # if not whitespace put value of line in the list to return
             else:
                 returnList += [line]
-
     return returnList
 
 
