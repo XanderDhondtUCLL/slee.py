@@ -23,29 +23,29 @@ def readNotes():
                 returnList += [line]
     return returnList
 
+readNotes()
 
 
 # remove a specific task if completed
 def removeNote(id):
-    with open(path, 'r', encoding='utf-8') as FILE:
-        lines = FILE.readlines()
+    count = 0
 
-    # delete matching content
-    content = id
+    # read the content of the file first before wiping it
+    noteContents = readNotes()
+
+    # wipe the file and do not add corresponding id's
     with open(path, 'w', encoding='utf-8') as FILE:
-        for line in lines:
-            # readlines() includes a newline character
-            if line.strip("\n") != content:
-                FILE.write(line)
+        print(noteContents)
+        for line in noteContents:
+            # if the start id of the line matches the id, write it to the new file and change its number
+            if line[0] != id:
+                count += 1
+                FILE.write(f"{count}{line[1::]}\n")
 
 # completely empty the save file
 def clearNotes():
     with open(path, 'w', encoding='utf-8') as FILE:
         FILE.truncate(0)
-
-    with open(idPath, 'w', encoding='utf-8') as IDFILE:
-        IDFILE.truncate(0)
-
 
 
 # return the length of a given file.    
@@ -54,7 +54,6 @@ def parseLength():
     with open(path, 'r', encoding='utf-8') as FILE:
         for line in FILE:
             line = line.rstrip()
-
             # Check if the line is whitespace
             if not line:
                 count

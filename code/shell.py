@@ -9,7 +9,7 @@ while main:
     print('')
 
     print("select one of following operations: (give in one of the numbers)")
-    print("1: add todo\n2: remove todo [number]\n3: clear entire list\n4: leave slee.py notes")
+    print("1: add todo\n2: remove todo\n3: clear entire list\n4: leave slee.py notes")
 
     value = input('\n')
     
@@ -19,13 +19,14 @@ while main:
             writeNotes(content)
 
         case '2':
-            content = input("remove todo (please give ID)")
+            removeID = input("\nremove todo (please give ID): ")
+            removeNote(removeID)
 
         case '3':
             print("-=-=-=- -=-=-=- -=-=-=- -=-=-=- -=-=-=-")
-            content = input('are you sure you want to do this? y/n: ')
+            clear = input('are you sure you want to do this? y/n: ')
 
-            if content == 'y':
+            if clear == 'y':
                 clearNotes()
             else:
                 print('-=-=-=- -=-=-=- -=-=-=-\n\naborting\n\n-=-=-=- -=-=-=- -=-=-=-')
