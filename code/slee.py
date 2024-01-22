@@ -1,4 +1,4 @@
-path = r'..\data\notes.txt'
+path = r'.\data\notes.txt'
 
 # write the content of the task to the save file
 def writeNotes(content):
