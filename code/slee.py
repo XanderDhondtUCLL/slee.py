@@ -23,8 +23,6 @@ def readNotes():
                 returnList += [line]
     return returnList
 
-readNotes()
-
 
 # remove a specific task if completed
 def removeNote(id):
