@@ -21,9 +21,16 @@ def addPopup():
     top = Toplevel(window)
     top.geometry("420x200")
     top.title("adding task")
+    top.config(background=background_color)
 
-    label = Label(top, text='dit is een test!')
-    label.pack()
+    label = Label(top, 
+                  text='Add task:', 
+                  font=('Arial 18 bold'),
+                  fg=foreground_color,
+                  background=background_color)
+    label.pack(anchor=NW)
+
+    entry = Entry(top)
 
 
 # GUI setup
