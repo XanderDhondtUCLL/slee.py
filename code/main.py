@@ -18,8 +18,15 @@ def update_notes():
 
 # Function to open popup window upon pressing add button
 def addPopup():
+    # Function to add tasks to the file
+    def fileWrite():
+        value = entry.get()
+        writeNotes(value)
+        label.config(text='')
+        update_notes()
+
     top = Toplevel(window)
-    top.geometry("420x200")
+    top.geometry("420x100")
     top.title("adding task")
     top.config(background=background_color)
 
@@ -31,7 +38,12 @@ def addPopup():
     label.pack(anchor=NW)
 
     entry = Entry(top)
-
+    entry.pack(expand=YES, fill=X, padx=10)
+    
+    submitBtn = Button(top,
+                       text='add task',
+                       command=fileWrite)
+    submitBtn.pack(pady=5)
 
 # GUI setup
 window = Tk()
