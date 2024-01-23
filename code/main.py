@@ -7,6 +7,11 @@ foreground_color = '#F5F5F5'
 
 # Function to update notes in the GUI
 def update_notes():
+    # Clear existing labels
+    for item in itemFrame.winfo_children():
+        item.destroy()
+
+    # Create and pack new labels
     for note in readNotes():
         label = Label(itemFrame, 
                       text=note,
@@ -22,7 +27,6 @@ def addPopup():
     def fileWrite():
         value = entry.get()
         writeNotes(value)
-        label.config(text='')
         update_notes()
 
     top = Toplevel(window)
@@ -58,7 +62,7 @@ itemFrame.pack(side=TOP, fill=BOTH, expand=YES)
 btnFrame = Frame(window)
 btnFrame.pack(side=BOTTOM, padx=10 ,pady=10)
 
-button = Button(btnFrame, text='Add note', command=addPopup)
+button = Button(btnFrame, text='Add task', command=addPopup)
 button.pack()
 
 # Update notes initially
