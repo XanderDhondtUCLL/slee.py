@@ -9,7 +9,7 @@ def writeNotes(content):
 
 
 # read content of the save file and return it in a list
-def readNotes():
+def readNotes() -> list:
     returnList = []
     with open(path, 'r', encoding='utf-8') as FILE:
         for line in FILE:
@@ -47,8 +47,8 @@ def clearNotes():
 
 
 # return the length of a given file.    
-def parseLength():
-    count = 0
+def parseLength() -> int:
+    count = int
     with open(path, 'r', encoding='utf-8') as FILE:
         for line in FILE:
             line = line.rstrip()
