@@ -33,7 +33,6 @@ def removeNote(id):
 
     # wipe the file and do not add corresponding id's
     with open(path, 'w', encoding='utf-8') as FILE:
-        print(noteContents)
         for line in noteContents:
             # if the start id of the line matches the id, write it to the new file and change its number
             if line[0] != id:
@@ -48,7 +47,7 @@ def clearNotes():
 
 # return the length of a given file.    
 def parseLength() -> int:
-    count = int
+    count = 0
     with open(path, 'r', encoding='utf-8') as FILE:
         for line in FILE:
             line = line.rstrip()
