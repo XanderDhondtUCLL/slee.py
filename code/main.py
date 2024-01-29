@@ -55,6 +55,20 @@ def removePopup():
 
     Button(popup, text='remove', command=removeTask).pack(side=LEFT, padx=10)
 
+def removeAll():
+    def clear():
+        clearNotes()
+        update()
+        popup.destroy)
+    
+    popup = Toplevel(bg=background_color)
+    popup.geometry('300x120')
+    popup.title('Clear all tasks')
+
+    Label(popup, text='Remove all tasks?', font='Arial 12 bold', fg=foreground_color, bg=background_color).pack(anchor='nw', padx=10, pady=5)
+
+    Button(popup, text='yes',command=clear).pack(side=LEFT, padx=10)
+    Button(popup, text='no',command=popup.destroy).pack(side=LEFT, padx=10)
 
 # Setup
 background_color = '#191919'
@@ -96,6 +110,7 @@ buttonFrame.pack(side=BOTTOM)
 # create buttons in the button frame
 Button(buttonFrame, text="add task", command=addPopup).pack(side=LEFT, padx=5, pady=10)
 Button(buttonFrame, text="remove task", command=removePopup).pack(side=LEFT, padx=5, pady=10)
+Button(buttonFrame, text="remove all tasks", command=removeAll).pack(side=LEFT, padx=5, pady=10)
 
 # call update once upon loading of program
 update()
