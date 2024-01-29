@@ -59,7 +59,7 @@ def removeAll():
     def clear():
         clearNotes()
         update()
-        popup.destroy)
+        popup.destroy()
     
     popup = Toplevel(bg=background_color)
     popup.geometry('300x120')
