@@ -1,9 +1,11 @@
 [ ] add a search function using regex
+[ ] sort function
 [ ] implement a tagging system for notes
 [ ] enable sorting notes by date or title
 [ ] add a reminder feature for important notes
 [ ] implement a light/dark mode option
 [ ] allow users to export notes as PDF or text files
+[ ] click on note and allow to add even more notes
 
 * things I want to do but are very hard for me currently:
     [ ] enable syncing notes across multiple devices
